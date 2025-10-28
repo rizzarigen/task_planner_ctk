@@ -4,7 +4,7 @@ from src import Controller
 
 class TaskCard(CTkFrame):
     def __init__(self, master, controller: Controller, task: Task, id , **kwargs) -> None:
-        super().__init__(master, **kwargs)
+        super().__init__(master, fg_color="red", **kwargs)
 
         # add widgets onto the frame, for example:
         self.title = CTkLabel(self, text = task.title, font=("Segoe UI", 20))
