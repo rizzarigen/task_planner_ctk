@@ -10,13 +10,13 @@ class View(customtkinter.CTk):
 
 
         self.upd_btn = customtkinter.CTkButton(self, text='update')
-        self.upd_btn.grid(row=1)
+        self.upd_btn.grid(row=1, pady=10, padx=30)
 
         self.child_win_btn = customtkinter.CTkButton(self, text='create task')
-        self.child_win_btn.grid(row=2)
+        self.child_win_btn.grid(row=2, pady=10, padx=30)
 
         self.tasks_frame = TasksFrame.TasksFrame(self)
-        self.tasks_frame.grid(row=0)
+        self.tasks_frame.grid(row=0, pady=10, padx=20)
 
 
 

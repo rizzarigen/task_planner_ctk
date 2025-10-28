@@ -18,4 +18,3 @@ class TaskCard(CTkFrame):
         self.description.grid(row=1, column=0)
         self.del_btn.grid(row=2, padx=20, pady=7)
 
-
