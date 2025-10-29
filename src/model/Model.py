@@ -54,7 +54,7 @@ class Model(TaskVault):
             tasks = json.load(file)
             for task_id in tasks:
                 task = tasks[task_id]
-                self.add_task(Task.Task(task["title"], task["description"], task["priority"]))
+                self.add_task(Task.Task(task["title"], task["description"], task["priority"], task["x"], task["y"]))
             print()
 
     def save_tasks_into_file(self):

@@ -8,6 +8,16 @@ from src.ui import TaskCard, TaskCreator
 
 from src.model.Task import Task
 
+import ctypes
+
+
+def get_windows_dpi():
+    hdc = ctypes.windll.user32.GetDC(0)
+    dpi = ctypes.windll.gdi32.GetDeviceCaps(hdc, 88)  # 88: LOGPIXELSX
+    ctypes.windll.user32.ReleaseDC(0, hdc)
+    print(dpi)
+    return dpi
+
 class Controller:
     def __init__(self, model: Model.Model, view: View.View):
         self._model = model
@@ -29,8 +39,8 @@ class Controller:
 
         if len(tasks) != 0:
             for task_id in tasks:
-                card = TaskCard.TaskCard(self._view.tasks_frame, self, tasks[task_id], task_id)
-                card.grid(row=0, column=task_id - 1, padx=20, pady=20, sticky="nsew")
+                card = TaskCard.TaskCard(self._view, self, tasks[task_id], task_id, dpi_scale= get_windows_dpi() / 96 )
+                card.place(x=tasks[task_id].x, y=tasks[task_id].y )
         else:
             empty_card = TaskCard.TaskCard(self._view.tasks_frame, self, Task(), 0)
             empty_card.del_btn.destroy()
