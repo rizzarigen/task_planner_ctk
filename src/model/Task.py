@@ -11,16 +11,16 @@ class Task:
         self.__description = description
         self.__priority = priority
         self.__is_ready = is_ready
-        self.__x = x
-        self.__y = y
+        self.x = x
+        self.y = y
 
     def __call__(self, *args, **kwargs):
         return { "title": self.__title,
                 "description": self.__description,
                 "priority": self.__priority,
                 "is_ready": self.__is_ready,
-                "x": self.__x,
-                "y": self.__y
+                "x": self.x,
+                "y": self.y
         }
 
     @property
@@ -39,10 +39,3 @@ class Task:
     def is_ready(self):
         return self.__is_ready
 
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y

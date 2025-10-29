@@ -1,1 +1,34 @@
-{}
+{
+    "1": {
+        "title": "2",
+        "description": "",
+        "priority": 1,
+        "is_ready": false,
+        "x": -136.8,
+        "y": -100.0
+    },
+    "2": {
+        "title": "",
+        "description": "",
+        "priority": 1,
+        "is_ready": false,
+        "x": 267.2,
+        "y": 136.79999999999998
+    },
+    "3": {
+        "title": "",
+        "description": "",
+        "priority": 1,
+        "is_ready": false,
+        "x": 32.80000000000001,
+        "y": 296.8
+    },
+    "4": {
+        "title": "",
+        "description": "",
+        "priority": 1,
+        "is_ready": false,
+        "x": 112.80000000000001,
+        "y": 180.0
+    }
+}

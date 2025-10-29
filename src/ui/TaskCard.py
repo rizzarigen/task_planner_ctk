@@ -29,9 +29,10 @@ class TaskCard(CTkFrame):
         self.bind("<B1-Motion>", self.drag_motion)
 
         self.DPI_SCALING = dpi_scale
+        self.__task = task
 
     def drag_start(self, event):
-
+        
         self.startX = (event.x) / self.DPI_SCALING
         self.startY = (event.y) / self.DPI_SCALING
 
@@ -39,5 +40,10 @@ class TaskCard(CTkFrame):
         x = (event.x + self.winfo_x()) / self.DPI_SCALING - self.startX
         y = (event.y + self.winfo_y()) / self.DPI_SCALING - self.startY
         self.place(x=x,y=y)
+        self.__task.x = x
+        self.__task.y = y
 
+        print(self.__task.x)
+        print(self.__task.y)
+        self.controller._model.save_tasks_into_file()
 
