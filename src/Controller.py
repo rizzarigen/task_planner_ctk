@@ -34,7 +34,7 @@ class Controller:
         else:
             empty_card = TaskCard.TaskCard(self._view.tasks_frame, self, Task(), 0)
             empty_card.del_btn.destroy()
-            empty_card.grid(row = 0, column = 0, padx=20, pady=20, sticky="nsew")
+            empty_card.grid(row = 1, column = 0, padx=20, pady=20, sticky="n")
 
 
 
