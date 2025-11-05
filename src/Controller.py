@@ -27,6 +27,7 @@ class Controller:
         self.update_view()
 
         self.mf = SidebarFrame.Sidebar(master=self._view, controller=self)
+        self.DPI_SCALING = dpi_scale=get_windows_dpi() / 96
         
 
         ## self._task_creator_window = None

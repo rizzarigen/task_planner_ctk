@@ -44,7 +44,7 @@ class Sidebar(CTkFrame):
         current_width = self.winfo_width()
 
         if not current_width > self.__extended_width:
-            self.configure(width=current_width + 10)
+            self.configure(width=(current_width + 10) / self.controller.DPI_SCALING)
 
             self.after(ms=8, func=self.extend_animation)
 
@@ -52,8 +52,8 @@ class Sidebar(CTkFrame):
     def fold_animation(self):
         if self.winfo_width() == 1:
             self.configure(width = 0)
-        elif self.winfo_width() > 0:
-            self.configure(width = self.winfo_width() - 10)
+        elif self.winfo_width() / self.controller.DPI_SCALING > 0:
+            self.configure(width = (self.winfo_width() - 10) / self.controller.DPI_SCALING )
             self.after(ms=4, func=self.fold_animation)
             
     
