@@ -1,8 +1,6 @@
 import customtkinter
 
-from src.ui import TasksFrame
-
-from src.new_ui import SidebarFrame
+from src.new_ui import SidebarFrame, TasksFrame
 
 class View(customtkinter.CTk):
     def __init__(self, ):
@@ -10,7 +8,11 @@ class View(customtkinter.CTk):
         self.geometry("600x500")
         self.title("CTk example")
 
+        self.tasks_frame = TasksFrame.TasksFrame(self)
+
         self.mf = SidebarFrame.Sidebar(self)
+
+
 
 
         ## self.upd_btn = customtkinter.CTkButton(self, text='update')
