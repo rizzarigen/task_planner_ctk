@@ -40,7 +40,6 @@ class Model(TaskVault):
     def __call__(self, *args, **kwargs):
         output = {}
         for task_id in self.tasks:
-            print(self.tasks[task_id]())
             output[str(task_id)] = self.tasks[task_id]()
 
 
@@ -54,12 +53,10 @@ class Model(TaskVault):
             tasks = json.load(file)
             for task_id in tasks:
                 task = tasks[task_id]
-                self.add_task(Task.Task(task["title"], task["description"], task["priority"]))
-            print()
+                self.add_task(Task.Task(task["title"], task["description"], task["priority"], x=task["x"], y=task["y"]))
 
     def save_tasks_into_file(self):
         with open("./tasks/tasks.json", "w") as wfile:
-            print(self.__call__())
             json.dump(self.__call__(), wfile, indent=4)
 
 
