@@ -1,6 +1,6 @@
 import customtkinter
 
-from src.new_ui import SidebarFrame, TasksFrame
+from src.new_ui import TasksFrame
 
 class View(customtkinter.CTk):
     def __init__(self, ):
@@ -10,7 +10,6 @@ class View(customtkinter.CTk):
 
         self.tasks_frame = TasksFrame.TasksFrame(self)
 
-        self.mf = SidebarFrame.Sidebar(self)
 
 
 

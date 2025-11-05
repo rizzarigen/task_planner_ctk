@@ -1,15 +1,15 @@
 from customtkinter import *
 
 class CreatorFrame(CTkFrame):
-        def __init__(self, master, *args, **kwargs):
+        def __init__(self, master, controller, *args, **kwargs):
             super().__init__(master, **kwargs)
 
             self.__master = master
-
+            
 
             self.title_entry = CTkEntry(master=self, placeholder_text="title")
             self.desc_entry = CTkEntry(master=self, placeholder_text="description")
-            self.confirm_btn = CTkButton(self, text='Confirm')
+            self.confirm_btn = CTkButton(self, text='Confirm', command=controller.create_task)
 
             self.visibility_btn = CTkButton(self, text="X", fg_color="red", width=20, height=20, command=self.hide)
 

@@ -2,10 +2,12 @@ from customtkinter import *
 from src.new_ui import CreatorFrame
 
 class Sidebar(CTkFrame):
-    def __init__(self, master, *args, **kwargs):
+    def __init__(self, master, controller, *args, **kwargs):
         super().__init__(master, fg_color="#242424", **kwargs)
 
         self.__master = master
+
+        self.controller = controller
         
 
         self.lift()
@@ -65,7 +67,7 @@ class Sidebar(CTkFrame):
         self.extend_btn.configure(text=">", command=self.extend_menu)
 
     def creator_btn_pressed_one(self):
-        self.creator_frame = CreatorFrame.CreatorFrame(self)
+        self.creator_frame = CreatorFrame.CreatorFrame(self, controller=self.controller)
         self.creator_btn.configure(command=self.creator_btn_pressed_two)
 
     def creator_btn_pressed_two(self):
